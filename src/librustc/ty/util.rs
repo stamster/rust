@@ -15,24 +15,19 @@ use hir::def_id::DefId;
 use hir::map::{DefPathData, Node};
 use hir;
 use ich::NodeIdHashingMode;
-use middle::const_val::ConstVal;
 use traits;
 use ty::{self, Ty, TyCtxt, TypeFoldable};
-use ty::fold::TypeVisitor;
 use ty::subst::UnpackedKind;
 use ty::maps::TyCtxtAt;
 use ty::TypeVariants::*;
 use ty::layout::{Integer, IntegerExt};
 use util::common::ErrorReported;
 use middle::lang_items;
-use mir::interpret::{Value, PrimVal};
 
 use rustc_data_structures::stable_hasher::{StableHasher, StableHasherResult,
                                            HashStable};
 use rustc_data_structures::fx::FxHashMap;
 use std::{cmp, fmt};
-use std::hash::Hash;
-use std::intrinsics;
 use syntax::ast;
 use syntax::attr::{self, SignedInt, UnsignedInt};
 use syntax_pos::{Span, DUMMY_SP};
